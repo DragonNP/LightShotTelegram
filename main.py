@@ -4,6 +4,8 @@ from telegram import Update, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, Filters
 
 # Logger setup
+import secrets
+
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -35,7 +37,7 @@ def send_random_photo(update: Update, context: CallbackContext) -> None:
 def main() -> None:
     """Run the bot."""
     # Create the Updater and pass it your bot's token.
-    updater = Updater(token='2121656952:AAEFe72n9vcM12RbeRrYKEHUTkCQeDry7UE', use_context=True)
+    updater = Updater(token=secrets.BOT_URL, use_context=True)
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler('start', start))

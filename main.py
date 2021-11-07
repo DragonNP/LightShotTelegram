@@ -37,7 +37,7 @@ def send_random_photo(update: Update, context: CallbackContext) -> None:
 def main() -> None:
     """Run the bot."""
     # Create the Updater and pass it your bot's token.
-    updater = Updater(token=secrets.BOT_URL, use_context=True)
+    updater = Updater(token=secrets.BOT_TOKEN, use_context=True)
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler('start', start))
